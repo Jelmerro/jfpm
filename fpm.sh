@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-cd "$(dirname "$(realpath "$0")")" || exit
-if [ ! -d ./gems/ ] || [ ! -d ./jruby-*/ ];then
-    ./setup.sh
+dir=$(dirname "$(realpath "$0")")
+if [ ! -d $dir/gems/ ] || [ ! -d $dir/jruby-*/ ];then
+    "$dir/setup.sh"
 fi
-cd ./gems/ || exit
-../jruby-*/bin/jruby -S fpm "$@"
+export JRUBY_HOME=$dir
+export GEM_HOME=$dir/gems/
+export GEM_PATH=$dir/gems/
+export PATH=$PATH:$GEM_HOME/bin
+$dir/jruby-*/bin/jruby -S fpm "$@"
