@@ -8,11 +8,11 @@ For example, you can do `./fpm.sh --version` as a test.
 All files are downloaded/stored right next to the script.
 The script will automatically invoke the setup script if fpm is not installed yet:
 
-- Downloads a JRuby zip
-- Extracts it to a versioned jruby folder
-- Installs the fpm gem to the gems folder
+- Downloads a [JRuby](https://github.com/jruby/jruby) zip
+- Extracts it to the jruby folder
+- Installs the fpm gem to the gems folder using jruby
 
-Subsequent runs will detect the jruby and gems folders and directly run fpm.
+Subsequent runs will detect the jruby and gems folders and use it to run fpm.
 If you want to update or re-install at some point,
 either delete the folders and run `./fpm.sh` like usual or run the setup manually.
 The startup time of JRuby is a bit slower than regular ruby,

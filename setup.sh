@@ -7,8 +7,8 @@ setup_url=$(echo "$setup_url" | cut -d ":" -f "2,3" | tr -d '"' | tr -d ',' | tr
 echo "$setup_url"
 wget "$setup_url" -O "$dir/jruby.zip"
 unzip -o "$dir/jruby.zip" -d "$dir"
+mv "$dir"/jruby-*/ "$dir/jruby/"
 rm "$dir/jruby.zip"
-export JRUBY_HOME=$dir
 export GEM_HOME=$dir/gems
 export GEM_PATH=$dir/gems
-$dir/jruby-*/bin/jruby -S jgem install fpm
+"$dir/jruby/bin/jruby" -S jgem install fpm
