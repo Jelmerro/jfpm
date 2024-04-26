@@ -26,3 +26,8 @@ The main advantage in both cases is that everything related to fpm is local,
 so it does not need nor use any global tools to be able to use fpm.
 Fpm itself does need some global tools though, and without Java you cannot run JRuby,
 but otherwise everything related to jfpm is stored next to the `./fpm.sh` script.
+
+## License
+
+The `fpm.sh` and `setup.sh` scripts of jfpm are licensed as free software under the MIT.
+Both JRuby and the fpm ruby gem are covered by different licenses.
