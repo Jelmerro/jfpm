@@ -12,3 +12,4 @@ rm "$dir/jruby.zip"
 export GEM_HOME=$dir/gems
 export GEM_PATH=$dir/gems
 "$dir/jruby/bin/jruby" -S jgem install fpm
+"$dir/fix_fedora_41_buildroot_arg.sh"

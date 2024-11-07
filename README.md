@@ -3,6 +3,8 @@ jfpm
 
 ### Run fpm with a local JRuby install instead of a global Ruby install
 
+## Usage
+
 Usage is simple, simply invoke `./fpm.sh` as if you would run [fpm](https://github.com/jordansissel/fpm).
 For example, you can do `./fpm.sh --version` as a test.
 All files are downloaded/stored right next to the script.
@@ -18,6 +20,14 @@ either delete the folders and run `./fpm.sh` like usual or run the setup manuall
 The startup time of JRuby is a bit slower than regular ruby,
 but otherwise subsequent runs should be identical to running fpm with Ruby.
 
+### Fedora 41+
+
+Since Fedora 41 it's required to specify the buildroot argument to rpmbuild.
+This is not present in fpm at the moment, but there is a [PR for it](https://github.com/jordansissel/fpm/pull/2082).
+The downloaded fpm gem is automatically patched after setup with `./fix_fedora_41_buildroot_arg.sh`.
+This patch will not be needed when the PR is merged and a new fpm is released with it,
+though the last fpm release is at the moment over a year old, so it might take a while.
+
 ## Rationale
 
 This is mainly of interest for those who do not use Ruby, but do have Java.
@@ -29,5 +39,5 @@ but otherwise everything related to jfpm is stored next to the `./fpm.sh` script
 
 ## License
 
-The `fpm.sh` and `setup.sh` scripts of jfpm are licensed as free software under the MIT.
+The bash scripts of jfpm are licensed as free software under the MIT.
 Both JRuby and the fpm ruby gem are covered by different licenses.
