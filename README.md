@@ -20,14 +20,6 @@ either delete the folders and run `./fpm.sh` like usual or run the setup manuall
 The startup time of JRuby is a bit slower than regular ruby,
 but otherwise subsequent runs should be identical to running fpm with Ruby.
 
-### Fedora 41+
-
-Since Fedora 41 it's required to specify the buildroot argument to rpmbuild.
-This is not present in fpm at the moment, but there is a [PR for it](https://github.com/jordansissel/fpm/pull/2082).
-The downloaded fpm gem is automatically patched after setup with `./fix_fedora_41_buildroot_arg.sh`.
-This patch will not be needed when the PR is merged and a new fpm is released with it,
-though the last fpm release is at the moment over a year old, so it might take a while.
-
 ## Rationale
 
 This is mainly of interest for those who do not use Ruby, but do have Java.
