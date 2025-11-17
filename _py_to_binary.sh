@@ -29,3 +29,5 @@ python -m pip install pyinstaller
 python -m PyInstaller --onefile --name "$name" -c --manifest="$name:main" "$name.py"
 deactivate
 rm -rf build/ pyinstaller_venv/ "$name.egg-info/" "$name.spec"
+# export fields
+export name version description url author license timestamp

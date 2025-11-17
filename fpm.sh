@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-if type fpm >/dev/null 2>&1;then
+if type fpm >/dev/null 2>&1; then
     fpm "$@"
     exit
 fi
 dir=$(dirname "$(realpath "$0")")
-if [ ! -d "$dir/gems/" ] || [ ! -d "$dir/jruby/" ];then
+if [ ! -d "$dir/gems/" ] || [ ! -d "$dir/jruby/" ]; then
     "$dir/_setup.sh"
 fi
 export GEM_HOME=$dir/gems/
