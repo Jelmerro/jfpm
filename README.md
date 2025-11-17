@@ -22,22 +22,16 @@ but otherwise subsequent runs should be identical to running fpm with Ruby.
 
 ## Release scripts
 
-The release helper scripts are responsible for bundling my Python projects.
+The release helper scripts are responsible for bundling my projects for release.
 You can use them to compile any pyproject.toml project into deb, rpm and pacman.
+The scripts are supposed to be run from another project like so: `../jfpm/release_py_simple.sh`.
 The deps version uses PyInstaller to bundle the dependencies with it.
 The resulting builds can be found in the respective repos releases tab,
 as well as in my own [Fedora repo](https://jelmerro.nl/fedora) for the rpm builds to also auto update them.
 
-## Rationale
+## Why
 
 This is mainly of interest for those who do not use Ruby, but do have Java.
 It can also be used by those who do have Ruby but do not like to install global gems.
 The main advantage in both cases is that everything related to fpm is local,
 so it does not need nor use any global tools to be able to use fpm.
-Fpm itself does need some global tools though, and without Java you cannot run JRuby,
-but otherwise everything related to jfpm is stored next to the `./fpm.sh` script.
-
-## License
-
-The bash scripts of jfpm are licensed as free software under the MIT.
-Both JRuby and the fpm ruby gem are covered by different licenses.
