@@ -1,7 +1,13 @@
 jfpm
 ====
 
-### Run fpm with a local JRuby install instead of a global Ruby install
+Run fpm with a local JRuby instead of a global Ruby install
+
+## Features
+
+- Run the awesome [fpm](https://github.com/jordansissel/fpm) tool without a system Ruby
+- No global gem installs needed, it all stays inside this folder
+- Includes release scripts to be used for Python projects to build releases
 
 ## Usage
 
@@ -29,9 +35,10 @@ The deps version uses PyInstaller to bundle the dependencies with it.
 The resulting builds can be found in the respective repos releases tab,
 as well as in my own [Fedora repo](https://jelmerro.nl/fedora) for the rpm builds to also auto update them.
 
-## Why
+## Contribute
 
-This is mainly of interest for those who do not use Ruby, but do have Java.
-It can also be used by those who do have Ruby but do not like to install global gems.
-The main advantage in both cases is that everything related to fpm is local,
-so it does not need nor use any global tools to be able to use fpm.
+You can support my work on [ko-fi](https://ko-fi.com/Jelmerro) or [Github sponsors](https://github.com/sponsors/Jelmerro).
+Another way to help is to report issues or suggest new features.
+Please try to follow recommendations by shellcheck when developing.
+For an example vimrc that can auto-format based on the included linters,
+you can check out my personal [vimrc](https://github.com/Jelmerro/vimrc).
