@@ -5,7 +5,7 @@ if type fpm >/dev/null 2>&1;then
 fi
 dir=$(dirname "$(realpath "$0")")
 if [ ! -d "$dir/gems/" ] || [ ! -d "$dir/jruby/" ];then
-    "$dir/setup.sh"
+    "$dir/_setup.sh"
 fi
 export GEM_HOME=$dir/gems/
 export PATH=$PATH:${GEM_HOME}bin:$dir/jruby/bin

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 dir=$(dirname "$(realpath "$0")")
-rm -rf "$dir/gems"
-rm -rf "$dir/jruby*"
+rm -rf "$dir/gems" "$dir/jruby*"
 setup_url=$(curl https://api.github.com/repos/jruby/jruby/releases/latest | grep "browser_download_url" | grep ".zip" | grep "bin")
 setup_url=$(echo "$setup_url" | cut -d ":" -f "2,3" | tr -d '"' | tr -d ',' | tr -d ' ')
 echo "$setup_url"
