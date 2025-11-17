@@ -20,6 +20,14 @@ either delete the folders and run `./fpm.sh` like usual or run the setup manuall
 The startup time of JRuby is a bit slower than regular ruby,
 but otherwise subsequent runs should be identical to running fpm with Ruby.
 
+## Release scripts
+
+The release helper scripts are responsible for bundling my Python projects.
+You can use them to compile any pyproject.toml project into deb, rpm and pacman.
+The deps version uses PyInstaller to bundle the dependencies with it.
+The resulting builds can be found in the respective repos releases tab,
+as well as in my own [Fedora repo](https://jelmerro.nl/fedora) for the rpm builds to also auto update them.
+
 ## Rationale
 
 This is mainly of interest for those who do not use Ruby, but do have Java.
